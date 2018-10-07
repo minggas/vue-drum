@@ -12,7 +12,7 @@
       <PadButton keyId="122" btnKey="Z" pad="TomHigh" soundEnd="./sounds/TomHigh.mp3"/>
       <PadButton keyId="120" btnKey="X" pad="Crash" soundEnd="./sounds/Crash.mp3"/>
       <PadButton keyId="99" btnKey="C" pad="RideCymbal" soundEnd="./sounds/RideCymbal.mp3"/>
-  </div>
+    </div>
   </div>
 </template>
 
@@ -27,6 +27,11 @@ export default {
     PadButton,
     Title,
     Display
+  },
+  data: function() {
+    return {
+      display: ""
+    };
   }
 };
 </script>
@@ -54,5 +59,14 @@ body {
   border: 2px solid hsl(203, 40%, 10%);
   border-radius: 15px;
   box-shadow: 7px 10px 34px 1px rgba(0, 0, 0, 0.68), inset -1px -6px 12px;
+}
+
+.pad {
+  height: 85%;
+  padding: 2rem;
+  grid-gap: 0.8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 </style>

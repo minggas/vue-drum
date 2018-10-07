@@ -25,6 +25,7 @@ export default {
       if (!audio) return;
       audio.currentTime = 0;
       audio.play();
+      this.$parent.display = e.currentTarget.id;
     }
   }
 };

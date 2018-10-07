@@ -1,20 +1,30 @@
 <template>
   <div id="app">
     <Title title="Virtual Drum" />
-    <Display sound="teste" />       
-    <Pad />
+    <Display v-bind:sound="display" />       
+    <div class="pad">
+      <PadButton keyId="113" btnKey="Q" pad="Kick" soundEnd="/sounds/Kick.mp3" @click="this.display = 'Kick'"/>
+      <PadButton keyId="119" btnKey="W" pad="HiHat" soundEnd="./sounds/HiHat.mp3"/>
+      <PadButton keyId="101" btnKey="E" pad="Snare" soundEnd="./sounds/Snare.mp3"/>
+      <PadButton keyId="97" btnKey="A" pad="Openhat" soundEnd="./sounds/Openhat.mp3"/>
+      <PadButton keyId="115" btnKey="S" pad="TomFloor" soundEnd="./sounds/TomFloor.mp3"/>
+      <PadButton keyId="100" btnKey="D" pad="TomMid" soundEnd="./sounds/TomMid.mp3"/>
+      <PadButton keyId="122" btnKey="Z" pad="TomHigh" soundEnd="./sounds/TomHigh.mp3"/>
+      <PadButton keyId="120" btnKey="X" pad="Crash" soundEnd="./sounds/Crash.mp3"/>
+      <PadButton keyId="99" btnKey="C" pad="RideCymbal" soundEnd="./sounds/RideCymbal.mp3"/>
+  </div>
   </div>
 </template>
 
 <script>
-import Pad from "./components/Pad.vue";
+import PadButton from "./components/PadButton.vue";
 import Title from "./components/Title.vue";
 import Display from "./components/Display.vue";
 
 export default {
   name: "app",
   components: {
-    Pad,
+    PadButton,
     Title,
     Display
   }

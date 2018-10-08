@@ -1,9 +1,9 @@
 /* eslint-disable */
 <template>
-  <div class="drum-pad" :data-key="keyId" :id="pad" @click="playSound">
+  <div class="drum-pad" :data-key="keyId" @click="playSound">
     <kbd>{{btnKey}}</kbd>
     <span class="sound">{{pad}}</span>
-    <audio :ref="keyId" :src="soundEnd"></audio>
+    <audio :ref="keyId" :src="soundEnd" :id="pad"></audio>
   </div>
 </template>
 
@@ -25,7 +25,7 @@ export default {
       if (!audio) return;
       audio.currentTime = 0;
       audio.play();
-      this.$parent.display = e.currentTarget.id;
+      this.$parent.display = audio.id;
     }
   }
 };

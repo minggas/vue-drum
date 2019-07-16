@@ -42,7 +42,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 0.07s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
   background-color: hsla(203, 25%, 74%, 0.7);
   border-radius: 10px;
   border: none;
@@ -51,5 +51,11 @@ export default {
 
 .drum-pad kbd {
   font-size: calc(1rem + 2vw);
+}
+
+.drum-pad:active {
+  background-color: hsla(123, 65%, 36%, 0.5);
+  transform: translate(0px, 3px);
+  box-shadow: none;
 }
 </style>
